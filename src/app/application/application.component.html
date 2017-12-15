@@ -1,3 +1,81 @@
-<p>
-  application works!
-</p>
+<div class="application-summary">
+  <div class="application-header">
+    <h2>
+    Your Application
+  </h2>
+  </div>
+  <div class="application-body">
+    <div class="application-content">
+      <div class="app-top"></div>
+      <div class="app-bottom">
+        <div class="app-head">
+          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom">Recommendations</span>
+          <div class="recommendations" ></div>
+        </div>
+        <div class="app-head">
+          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom" n>Security Alerts</span>
+          <div class="security" >
+
+          </div>
+        </div>
+        <div class="app-head">
+          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom">Liscenses</span>
+          <div class="liscence" >
+              <script src="components/c3/c3.min.js"></script>
+              <script src="components/d3/d3.min.js"></script>
+              <div id="donut-chart-7" class="donut-chart-pf example-donut-chart-mini"></div>
+              <div style="text-align: center; width: 220px;">Animals</div>
+              <script>
+                var c3ChartDefaults = $().c3ChartDefaults();
+              
+                var donutData = {
+                  type : 'donut',
+                  colors: {
+                    'Apache2.0' : $.pfPaletteColors.blue,
+                    'EPL1.0' : $.pfPaletteColors.orange,
+                    'MIT Liscense' : $.pfPaletteColors.green,
+                  },
+                  columns: [
+                    ['EPL 1.0', 2],
+                    ['MIT Liscense', 3],
+                    ['Apache 2.0', 1]
+                  ],
+                  onclick: function (d, i) { console.log("onclick", d, i); },
+                  onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                  onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                };
+              
+                // Small Donut Chart
+                var donutChartSmallConfig = c3ChartDefaults.getDefaultDonutConfig('8');
+                donutChartSmallConfig.bindto = '#donut-chart-7';
+                donutChartSmallConfig.tooltip = {show: true};
+                donutChartSmallConfig.data = donutData;
+                donutChartSmallConfig.legend = {
+                  show: true,
+                  position: 'right'
+                };
+                donutChartSmallConfig.size = {
+                  width: 250,
+                  height: 115
+                };
+                donutChartSmallConfig.tooltip = {
+                  contents: $().pfDonutTooltipContents
+                };
+              
+                var donutChartSmall = c3.generate(donutChartSmallConfig);
+              </script>
+                            
+          </div>
+        </div>
+        <div class="app-head">
+          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom">Metadatas</span>
+          <div class="matadata" *ngIf="showtd">
+            <span class="met">Group Id</span> <input type="text" value="{{g-id}}"> <br />
+            <span class="met">Artifact Id</span> <input type="text" value= "{{a-id}}"> <br />
+            <span class="met">Version</span> <input type="text" value= "{{version}}"> <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
