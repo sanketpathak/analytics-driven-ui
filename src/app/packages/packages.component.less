@@ -1,25 +1,150 @@
 /* @import (reference) '../../assets/stylesheets/shared/main.less'; */
-.display-dependencies {
-    margin-top: 20px;
-}
-.a {
-    position:relative;
-    z-index: -1;
-}
-.b {
-    position:absolute;
-    top: 70px;
-    left: 45px;
-}
 .header {
-    margin-top: 20px;
+    position: relative;
     margin-left: 20px;
+}
+.content {
+    position: relative;
+    float: left;
+    width: 300px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display:inline-block;
+    vertical-align:middle;
+    .catagories {
+    }
+    .catagories-card {
+        border:thin solid black;
+        .tag-color{
+            color: #00b9e4 ;
+            font-weight: bold;
+        }
+    }
+}
+.dependencies {
+    position:relative;
+    margin-top: 10px;
+    display:inline-block;
+    vertical-align:middle;
+    .display-dependencies {
+        margin-top: 20px;
+        margin-left: 8px;
+        .dependency-cards {
+            width: 650px;
+        }
+        .card-border {
+            border: 0.003em solid #BEC0BC
+        }
+        .tag-border {
+            border: 1px solid #727272;
+            border-radius: 8px;
+            font-size: 10px;
+            color: #AFAFAF;
+            margin-bottom: 5px;
+            margin-left: 2px;
+            margin-right: 2px;
+            float: left;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        .dropbtn {
+            border-radius: 2px;
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+        .dropbtn:hover {
+            background-color: #beedf9;
+        }
+        .control {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .control input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+        .control__indicator {
+            position: absolute;
+            top: 7px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #E6E6E6;
+        }
+        .control input:checked ~ .control__indicator {
+            background: #2AA1C0;
+        }
+        .control:hover input:not([disabled]):checked ~ .control__indicator,
+        .control input:checked:focus ~ .control__indicator {
+            /* background: #0E647D; */
+            background: #2AA1C0;
+        }
+        .control input:disabled ~ .control__indicator {
+            background: #E6E6E6;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .control__indicator:after {
+            content: '';
+            position: absolute;
+            display: none;
+        }
+        .control input:checked ~ .control__indicator:after {
+            display: block;
+        }
+        .control--checkbox .control__indicator:after {
+            left: 8px;
+            top: 4px;
+            width: 3px;
+            height: 8px;
+            border: solid #FFF;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .control--checkbox input:disabled ~ .control__indicator:after {
+            border-color: #7B7B7B;
+        }
+    }
+    .search-box {
+        position:relative;
+        padding-left:35px;
+        width: 500px;
+        height:30px; 
+        /* z-index: -1; */
+    }
+    .search-icon {
+        position:relative;
+        left: 25px;
+        color: gray;
+        font-size: 18px;
+        z-index: 2;
+    }
+    .search-dependencies {
+        .filter-button {
+            margin-left: 10px;
+            border-width: 1px;
+            width: 115px;
+            height:30px; 
+            background-color: white;
+        }
+    }
 }
 
-.content {
-    margin-top: 20px;
-    margin-left: 20px;
+::-webkit-input-placeholder {
+    font-style: italic;
 }
-.search-dependencies {
-    margin-left: 20px;
+:-moz-placeholder {
+    font-style: italic;
+}
+::-moz-placeholder {
+    font-style: italic;
+}
+:-ms-input-placeholder {
+    font-style: italic;
 }
