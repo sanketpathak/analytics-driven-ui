@@ -11,15 +11,18 @@ import { PackagesServices } from './packages.component.service'
 export class PackagesComponent implements OnInit {
 
     public dependencies: Array<any> = [];
+    public dependenciesData: Array<any> = [];
     public masterTags: Array<any> = ['web', 'spring', 'database', 'starter', 'aws', 'maven'];
     public selectedPackages = new Set();
     public unselectedPackages = new Set();
     public selected: string;
     public offsetHeight = 110;
-    public categoriesHeight = 150;
+    public categoriesHeight = 120;
     public categories = {};
     public objectKeys = Object.keys;
     public selectedTags = new Set();
+    public suggestions: Array<any> = [];
+    public search_key = '';
 
     constructor(private packagesServices: PackagesServices ) {}
 
@@ -32,6 +35,7 @@ export class PackagesComponent implements OnInit {
                 this.selectedTags.add(i);
             })
         } else {
+            this.selectedTags.delete('All');
             this.unselectedPackages.add(dependency['name']);
             this.selectedPackages.delete(dependency['name']);
             console.log(dependency);
@@ -56,21 +60,7 @@ export class PackagesComponent implements OnInit {
         packageInfo.subscribe((data) => {
             console.log(data);
             if (data) {
-                this.dependencies = data['dependencies'];
-                data['dependencies'].map((d) => {
-                    this.unselectedPackages.add(d['name']);
-                    d.topic_list.forEach((element) => {
-                        this.categories[element] = this.categories[element] + 1 || 1;
-                        this.categories['All'] = this.categories['All'] + 1 || 1;
-                    });
-                });
-                this.categories = Object.keys(this.categories)
-                    .sort((a, b) => this.categories[b] - this.categories[a])
-                    .reduce((_sortedObj, key) => ({
-                        ..._sortedObj,
-                        [key]: this.categories[key]
-                    }), {})
-                this.categoriesHeight = this.offsetHeight + (20 * Object.keys(this.categories).length);
+                this.dependenciesData = data['dependencies'];
             }
         });
     }
@@ -130,11 +120,76 @@ export class PackagesComponent implements OnInit {
         }
         console.log(this.selectedTags);
     }
+    public showDependency(){
+        // this.dependencies = [];
+        // this.categories = {};
+        let tags = this.selected.split(",").map((item) =>{
+            return item.trim();
+        });
+        tags.forEach((i) => {
+            this.dependenciesData.map((d) => {
+                if (d['topic_list'].indexOf(i) !== -1){
+                    let _flag = true;
+                    this.dependencies.map((tmp) => {
+                        if(tmp.name === d.name)
+                            _flag = false;
+                    });
+                    if(_flag){
+                        this.dependencies.push(d);
+                        d.topic_list.forEach((element) => {
+                            this.categories[element] = this.categories[element] + 1 || 1;
+                            this.categories['All'] = this.categories['All'] + 1 || 1;
+                            this.categories = Object.keys(this.categories)
+                                .sort((a, b) => this.categories[b] - this.categories[a])
+                                .reduce((_sortedObj, key) => ({
+                                    ..._sortedObj,
+                                    [key]: this.categories[key]
+                                }), {})
+                            this.categoriesHeight = this.offsetHeight + (20 * Object.keys(this.categories).length);
+                        });
+                    }
+                }
+            });
+        });
+        console.log(tags);
+    }
+
+    handleUserInputKeyPress(event: KeyboardEvent): void {
+        console.log(event);
+        const key: string = event.key.trim();
+        if ((key && key.trim() === ',')){
+            this.search_key = '';
+            this.suggestions = [];
+        }else{
+            if (key === 'Enter') {
+                this.search_key = '';
+                this.suggestions = [];
+                this.showDependency();
+            }else if (key === 'Backspace') {
+                if (this.search_key !== '') {
+                    this.search_key = this.search_key.slice(0, -1);
+                    if (this.search_key !== '') {
+                        this.suggestions = [];
+                    }
+                }else {
+                    this.suggestions = [];
+                }
+            }else{
+                this.search_key += key.trim();
+            }
+            if (this.search_key){
+                this.suggestions = this.masterTags.filter((tag) => {
+                    return tag.indexOf(this.search_key) !== -1;
+                })}
+        }
+        console.log(this.search_key);
+    }
     public changeVersion(dependency:string, ver:string):void{
         dependency['latest_version'] = ver;
     }
     public test(varible){
         console.log(varible);
+        console.log(this.selected);
     }
     ngOnInit() {
         this.processPackages()
