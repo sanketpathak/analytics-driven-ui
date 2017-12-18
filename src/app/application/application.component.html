@@ -6,33 +6,116 @@
   </div>
   <div class="application-body">
     <div class="application-content">
-      <div class="app-top"></div>
+      <div class="app-top">
+          <div class="col-xs-12 col-sm-3 col-md-2">
+              <div class="card-pf card-pf-view card-pf-view-xs">
+                <div class="card-pf-body">
+                  <div class="row">
+                      Wildfly
+                    </div>
+                </div>
+              </div>
+              </div>
+          <div class="col-xs-12 col-sm-3 col-md-2">
+              <div class="card-pf card-pf-view card-pf-view-xs">
+                <div class="card-pf-body">
+                  <div class="row">
+                      <div class="col-sm-3">package</div>
+                      <div class="col-sm-7">version</div>
+                      <div class="col-sm-2"><span class="pficon-remove"></span></div>
+                    </div>
+                </div>
+              </div>
+              </div>
+      </div>
       <div class="app-bottom">
         <div class="app-head">
-          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom">Recommendations</span>
-          <div class="recommendations" ></div>
-        </div>
-        <div class="app-head">
-          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom" n>Security Alerts</span>
-          <div class="security" >
-
+          <span [class]="symbol" (click)="toggle()"></span><span class="nom">Recommendations</span>
+          <div class="recommendations" >
+              <!-- <div #sug (mouseover)="showComponentAnalysis(suggestion, sug)" (click)="handleSuggestionClick(suggestion, sug)" *ngFor="let suggestion of suggestions"> 
+                  <span class="package">suggestion.name</span>
+                  <span class="version">suggestion.version</span>-->
+              <!-- </div> -->
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                  <div class="card-pf card-pf-view card-pf-view-xs">
+                    <div class="card-pf-body">
+                      <div class="row">
+                          <div class="col-sm-3">package</div>
+                          <div class="col-sm-7">version</div>
+                          <div class="col-sm-2"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-2">
+                      <div class="card-pf card-pf-view card-pf-view-xs">
+                        <div class="card-pf-body">
+                          <div class="row">
+                              <div class="col-sm-3">package</div>
+                              <div class="col-sm-7">version</div>
+                              <div class="col-sm-2"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
+                            </div>
+                        </div>
+                      </div>
+                      </div>
           </div>
         </div>
         <div class="app-head">
-          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom">Liscenses</span>
+          <span [class]="symbol" (click)="toggle()"></span><span class="nom" n>Security Alerts</span>
+          <div class="security" >
+                <div class="col-xs-12 col-sm-3 col-md-2">
+                    <div class="card-pf card-pf-view card-pf-view-xs">
+                      <div class="card-pf-body">
+                        <div class="row">
+                            <!-- <div class="col-sm-4">package</div>
+                            <div class="col-sm-8">version</div> -->
+                            <p>CVE<a href="#">More info</a></p>
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+          </div>
+        </div>
+        <div class="app-head">
+          <span [class]="symbol" (click)="toggle()"></span><span class="nom">Liscenses</span>
           <div class="liscence" >
-              <script src="components/c3/c3.min.js"></script>
-              <script src="components/d3/d3.min.js"></script>
               <div id="donut-chart-7" class="donut-chart-pf example-donut-chart-mini"></div>
               <div style="text-align: center; width: 220px;"></div>
           </div>
         </div>
         <div class="app-head">
-          <span [class]="symbol[i]" (click)="toggle()"></span><span class="nom">Metadatas</span>
-          <div class="matadata" *ngIf="showtd">
-            <span class="met">Group Id</span> <input type="text" value="{{g-id}}"> <br />
-            <span class="met">Artifact Id</span> <input type="text" value= "{{a-id}}"> <br />
-            <span class="met">Version</span> <input type="text" value= "{{version}}"> <br />
+          <span [class]="symbol" (click)="toggle()"></span><span class="nom">Metadatas</span>
+          <div class="metadata" >
+            <div class="met"><span >Group Id</span>
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                  <div class="card-pf card-pf-view card-pf-view-xs">
+                    <div class="card-pf-body">
+                      <div class="row">
+                          <p>{{g-id}}</p>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+            <div class="met"><span >Artifact Id</span>
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                  <div class="card-pf card-pf-view card-pf-view-xs">
+                    <div class="card-pf-body">
+                      <div class="row">
+                          <p>{{a-id}}</p>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+            <div class="met"><span >Version</span>
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                  <div class="card-pf card-pf-view card-pf-view-xs">
+                    <div class="card-pf-body">
+                      <div class="row">
+                          <p>{{version}}</p>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
           </div>
         </div>
       </div>
