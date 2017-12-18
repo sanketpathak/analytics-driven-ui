@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     background-color: #f7f9fc;
+    border: thin solid black;
     .application-header {
         margin: 20px auto; 
     }
@@ -17,7 +18,7 @@
             display: flex;
             flex-direction: column;
             .col-md-2 {
-                width: 60%;
+                width: 100%;
                 flex-direction: row;                
             }
             .card-pf-view {
@@ -27,10 +28,13 @@
                 display: flex;
                 margin-left: 5px;
                 margin-right: 5px;
-                .col-sm-4 {
+                .col-sm-3 {
                     flex-grow: 1;
                 }
-                .col-sm-8 {
+                .col-sm-5 {
+                    flex-grow: 1;
+                }
+                .col-sm-4 {
                     flex-grow: 1;
                 }
                 .mon {
@@ -39,22 +43,30 @@
                     padding-right: 10px 
                 }
             }
+            .h2 {
+                .span {
+                    padding: 2px;
+                }
+            }
         }
         .app-bottom {
             display: flex;
             flex-direction: column;
             .app-head {
                 margin-right: 10px;
+                margin-left: 2px;
                 flex-direction: column;
-                .nom {
-                    font-size: 25px;
+                .h2 {
+                    .span {
+                        padding: 2px;
+                    }
                 }
             }
             .recommendation {
                 flex-direction: column;
             }
             .col-md-2 {
-                width: 60%;
+                width: 100%;
                 flex-direction: row;
             }
 
@@ -66,10 +78,13 @@
                 display: flex;
                 margin-left: 5px;
                 margin-right: 5px;
-                .col-sm-4 {
+                .col-sm-3 {
                     flex-grow: 1;
                 }
-                .col-sm-8 {
+                .col-sm-5 {
+                    flex-grow: 1;
+                }
+                .col-sm-4 {
                     flex-grow: 1;
                 }
                 .mon {
@@ -77,6 +92,9 @@
                     padding-left: 15px;
                     padding-right: 10px 
                 }
+            }
+            .liscence {
+                border: 1px solid; 
             }
 
             // .package {
@@ -104,14 +122,16 @@
                 display: flex;
                 flex-direction: column;
                 // justify-content: center;
-                width : 30%;
+                width : 100%;
                 .met {
                     display: flex;
                     flex-direction: row;
                     margin-left: 20px;
                     // justify-content: space-evenly;
                     &>.row {
-                        flex-direction: column;
+                        display: flex;
+                        margin-left: 5px;
+                        margin-right: 5px;
                     }
                 }
             }

@@ -21,8 +21,8 @@
                 <div class="card-pf-body">
                   <div class="row">
                       <div class="col-sm-3">package</div>
-                      <div class="col-sm-7">version</div>
-                      <div class="col-sm-2"><span class="pficon-remove"></span></div>
+                      <div class="col-sm-5">version</div>
+                      <div class="col-sm-4"><span class="pficon-remove"></span></div>
                     </div>
                 </div>
               </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="app-bottom">
         <div class="app-head">
-          <span [class]="symbol" (click)="toggle()"></span><span class="nom">Recommendations</span>
+          <h2><span [class]="symbol" (click)="toggle(index)"></span>Recommendations</h2>
           <div class="recommendations" >
               <!-- <div #sug (mouseover)="showComponentAnalysis(suggestion, sug)" (click)="handleSuggestionClick(suggestion, sug)" *ngFor="let suggestion of suggestions"> 
                   <span class="package">suggestion.name</span>
@@ -41,8 +41,8 @@
                     <div class="card-pf-body">
                       <div class="row">
                           <div class="col-sm-3">package</div>
-                          <div class="col-sm-7">version</div>
-                          <div class="col-sm-2"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
+                          <div class="col-sm-5">version</div>
+                          <div class="col-sm-4"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
                         </div>
                     </div>
                   </div>
@@ -52,8 +52,8 @@
                         <div class="card-pf-body">
                           <div class="row">
                               <div class="col-sm-3">package</div>
-                              <div class="col-sm-7">version</div>
-                              <div class="col-sm-2"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
+                              <div class="col-sm-5">version</div>
+                              <div class="col-sm-4"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
                             </div>
                         </div>
                       </div>
@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="app-head">
-          <span [class]="symbol" (click)="toggle()"></span><span class="nom" n>Security Alerts</span>
+          <h2><span [class]="symbol" (click)="toggle(index)"></span>Security Alerts</h2>
           <div class="security" >
                 <div class="col-xs-12 col-sm-3 col-md-2">
                     <div class="card-pf card-pf-view card-pf-view-xs">
@@ -77,48 +77,48 @@
           </div>
         </div>
         <div class="app-head">
-          <span [class]="symbol" (click)="toggle()"></span><span class="nom">Liscenses</span>
+          <h2><span [class]="symbol" (click)="toggle(index)"></span>Licenses</h2>
           <div class="liscence" >
               <div id="donut-chart-7" class="donut-chart-pf example-donut-chart-mini"></div>
-              <div style="text-align: center; width: 220px;"></div>
+              <div style="text-align: center; width: 95px;"></div>
           </div>
         </div>
         <div class="app-head">
-          <span [class]="symbol" (click)="toggle()"></span><span class="nom">Metadatas</span>
+          <h2><span [class]="symbol" (click)="toggle(index)"></span>Metadatas</h2>
           <div class="metadata" >
             <div class="met"><span >Group Id</span>
               <div class="col-xs-12 col-sm-3 col-md-2">
                   <div class="card-pf card-pf-view card-pf-view-xs">
                     <div class="card-pf-body">
                       <div class="row">
-                          <p>{{g-id}}</p>
+                          <p>g-id</p>
                         </div>
                     </div>
                   </div>
                   </div>
+              </div>
             <div class="met"><span >Artifact Id</span>
               <div class="col-xs-12 col-sm-3 col-md-2">
                   <div class="card-pf card-pf-view card-pf-view-xs">
                     <div class="card-pf-body">
                       <div class="row">
-                          <p>{{a-id}}</p>
+                          <p>a-id</p>
                         </div>
                     </div>
                   </div>
                   </div>
+            </div>
             <div class="met"><span >Version</span>
               <div class="col-xs-12 col-sm-3 col-md-2">
                   <div class="card-pf card-pf-view card-pf-view-xs">
                     <div class="card-pf-body">
                       <div class="row">
-                          <p>{{version}}</p>
+                          <p>version</p>
                         </div>
                     </div>
                   </div>
                   </div>
-          </div>
-        </div>
-      </div>
+            </div>
     </div>
   </div>
 </div>

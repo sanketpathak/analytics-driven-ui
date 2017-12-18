@@ -8,8 +8,8 @@ import * as c3 from 'c3';
 })
 export class ApplicationComponent implements OnInit {
   public donutData: any;
-  public showtd: boolean = false;
-  public symbol: string = 'fa fa-angle-right';
+  public showtd:  Array<boolean> = [false];
+  public symbol: string = 'fa fa-sort-desc';
   public trial: any;
   public c1: any;
   public d1: any;
@@ -88,23 +88,25 @@ export class ApplicationComponent implements OnInit {
   // }
 
   var chart = c3.generate(
-    { bindto: '#donut-chart-7',
+    { 
+    bindto: '#donut-chart-7',
     legend : {
         show: true,
         position: 'right'
       },
       data: { 
         columns: [ 
-          ['data1', 10], 
-          ['data2', 45], 
-          ['data3', 45]
+          ['Apache 2.0', 40],
+          ['EPL1.0', 40],
+          ['MIT Liscense', 20]
          ],
          type : 'donut',
          onclick: function (d, i) { console.log("onclick", d, i); },
          onmouseover: function (d, i) { console.log("onmouseover", d, i); },
          onmouseout: function (d, i) { console.log("onmouseout", d, i); }
          }, 
-         donut: { title: "3 Licences" } 
+         donut: { title: "3 Licences",
+         } 
         });
   
 
@@ -148,9 +150,10 @@ export class ApplicationComponent implements OnInit {
     // var donutChartSmall = c3.generate(donutChartSmallConfig);
   }
 
-  private toggle_td() {
-    this.showtd = !this.showtd;
-    if (this.showtd === true) {
+  private toggle_td(i) {
+    this.showtd[i] = !this.showtd[i];
+    console.log(i);
+    if (this.showtd[i] === true) {
         this.symbol = 'fa fa-sort-desc nom';
     }
     else {
