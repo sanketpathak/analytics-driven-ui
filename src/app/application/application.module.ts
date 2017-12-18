@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
@@ -11,12 +10,11 @@ import {ChartModule} from '../utils/chart/chart.module' ;
     ChartModule
 ],
  declarations: [
-  ApplicationComponent,
-  BrowserModule
+  ApplicationComponent
 ],
  exports: [
   ApplicationComponent
 ],
  providers: [],
 })
-export class AppModule { }
+export class ApplicationModule { }

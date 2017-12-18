@@ -7,11 +7,13 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 
 
 import { PackagesComponent } from './packages.component';
+import { ApplicationModule } from '../application/application.module';
 
 @NgModule ({
     imports: [
         CommonModule,
         FormsModule,
+        ApplicationModule,
         TypeaheadModule.forRoot(),
         BsDropdownModule.forRoot()
     ],

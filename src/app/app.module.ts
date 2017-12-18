@@ -11,7 +11,6 @@ import { HttpModule } from '@angular/http';
 @NgModule({
     declarations: [
         AppComponent,
-	PackagesComponent
     ],
     imports: [
         BrowserModule,
