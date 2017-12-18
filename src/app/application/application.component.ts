@@ -94,6 +94,10 @@ export class ApplicationComponent implements OnInit {
         show: true,
         position: 'right'
       },
+      size : {
+        height:300,
+        width :250
+      },
       data: { 
         columns: [ 
           ['Apache 2.0', 40],
@@ -106,7 +110,8 @@ export class ApplicationComponent implements OnInit {
          onmouseout: function (d, i) { console.log("onmouseout", d, i); }
          }, 
          donut: { title: "3 Licences",
-         } 
+         width: 15
+         },
         });
   
 
