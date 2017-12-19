@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as c3 from 'c3';
+
 
 @Component({
   selector: 'app-application',
@@ -7,10 +8,13 @@ import * as c3 from 'c3';
   styleUrls: ['./application.component.less']
 })
 export class ApplicationComponent implements OnInit {
+  @Input('component') component;
+  @Output() onCloseEmitter = new EventEmitter();
   public donutData: any;
   public showtd:  Array<boolean> = [false];
   public symbol: string = 'fa fa-sort-desc';
-  public trial: any;
+  // public trial: any;
+  public showOnScreen: boolean = true;
   public c1: any;
   public d1: any;
   public o1: any;
@@ -154,6 +158,12 @@ export class ApplicationComponent implements OnInit {
   
     // var donutChartSmall = c3.generate(donutChartSmallConfig);
   }
+
+  public emitCloseEvent(element: Element): void {
+    this.showOnScreen = false;
+    console.log(this.showOnScreen);
+    this.onCloseEmitter.emit([this.component, element]);
+}
 
   private toggle_td(i) {
     this.showtd[i] = !this.showtd[i];

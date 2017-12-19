@@ -42,18 +42,18 @@
                       <div class="row">
                           <div class="col-sm-3">package</div>
                           <div class="col-sm-5">version</div>
-                          <div class="col-sm-4"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
+                          <div class="col-sm-4"><span class="pficon-remove"></span><span class="fa fa-plus-square mon icon-b"></span></div>
                         </div>
                     </div>
                   </div>
                   </div>
-                  <div class="col-xs-12 col-sm-3 col-md-2">
+                  <div #comp class="col-xs-12 col-sm-3 col-md-2">
                       <div class="card-pf card-pf-view card-pf-view-xs">
                         <div class="card-pf-body">
                           <div class="row">
                               <div class="col-sm-3">package</div>
                               <div class="col-sm-5">version</div>
-                              <div class="col-sm-4"><span class="pficon-remove"></span><span class="fa-plus-square mon"></span></div>
+                              <div class="col-sm-4"><span (click)="emitCloseEvent(comp);" class="pficon-remove"></span><span class="fa fa-plus-square mon icon-b"></span></div>
                             </div>
                         </div>
                       </div>
@@ -69,7 +69,7 @@
                         <div class="row">
                             <!-- <div class="col-sm-4">package</div>
                             <div class="col-sm-8">version</div> -->
-                            <p>CVE<a href="#">More info</a></p>
+                            <p>CVE<button id="but" href="#">More info</button></p>
                           </div>
                       </div>
                     </div>
