@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AccordionModule } from 'ngx-bootstrap';
+import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 import * as c3 from 'c3';
 
 
@@ -11,14 +14,23 @@ export class ApplicationComponent implements OnInit {
   @Input('component') component;
   @Output() onCloseEmitter = new EventEmitter();
   public donutData: any;
-  public showtd:  Array<boolean> = [false];
+  public showtd: boolean = false;
   public symbol: string = 'fa fa-sort-desc';
   // public trial: any;
   public showOnScreen: boolean = true;
   public c1: any;
   public d1: any;
   public o1: any;
+
+  public charts: any = {};
+
+
   constructor() { }
+
+  status: any = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
 
   ngOnInit() {
   //   donutChartSmallConfig.d1 = { 
@@ -90,6 +102,20 @@ export class ApplicationComponent implements OnInit {
   //     },
 
   // }
+
+  this.charts['data'] = {
+    columns: [
+        ['data1', 30],
+        ['data2', 120],
+    ],
+    type : 'donut'
+  };
+
+  this.charts['options'] = {
+    donut: {
+        title: "Iris Petal Width"
+    }
+  };
 
   var chart = c3.generate(
     { 
@@ -165,14 +191,14 @@ export class ApplicationComponent implements OnInit {
     this.onCloseEmitter.emit([this.component, element]);
 }
 
-  private toggle_td(i) {
-    this.showtd[i] = !this.showtd[i];
-    console.log(i);
-    if (this.showtd[i] === true) {
-        this.symbol = 'fa fa-sort-desc nom';
+  private toggle() {
+    this.showtd = !this.showtd;
+    console.log();
+    if (this.showtd === true) {
+        this.symbol = 'fa fa-sort-asc nom';
     }
     else {
-        this.symbol = 'fa fa-sort-asc nom';
+        this.symbol = 'fa fa-sort-desc nom';
     }
   }
 }
