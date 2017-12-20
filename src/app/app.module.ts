@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PackagesModule } from './packages/packages.component.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { AccordionModule } from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpModule } from '@angular/http';
         BrowserModule,
         PackagesModule,
         HttpModule,
-        HttpClientModule
+        HttpClientModule,
+        AccordionModule
     ],
     providers: [],
     bootstrap: [AppComponent]

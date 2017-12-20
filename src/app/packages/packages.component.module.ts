@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TypeaheadModule} from 'ngx-bootstrap';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { AccordionModule } from 'ngx-bootstrap';
 
 
 
@@ -15,7 +16,8 @@ import { ApplicationModule } from '../application/application.module';
         FormsModule,
         ApplicationModule,
         TypeaheadModule.forRoot(),
-        BsDropdownModule.forRoot()
+        BsDropdownModule.forRoot(),
+        AccordionModule
     ],
     declarations: [
         PackagesComponent

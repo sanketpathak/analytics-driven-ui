@@ -3,6 +3,7 @@
     flex-direction: column;
     background-color: #f7f9fc;
     border: thin solid black;
+    // min-width: 485px;
     .application-header {
         margin: 20px auto; 
     }
@@ -56,6 +57,58 @@
         .app-bottom {
             display: flex;
             flex-direction: column;
+            .accordion-custom {
+                cursor: pointer;
+                background-color: #f7f9fc;
+                .accordion-group {
+                    background-color: #f7f9fc;
+                    background-image: none;
+                    border: none;
+                    .card.accordion-custom .card-header {
+                        background-image: none;
+                        /* background-repeat: repeat-x; */
+                        background-color: #f7f9fc;
+                        border: none;
+                        display: unset;
+                    }
+                    .accordion-heading {
+                        .panel-heading&&card-header {
+                            background-image: none;
+                            /* background-repeat: repeat-x; */
+                            background-color: #f7f9fc;
+                            border: none;
+                            display: unset;
+                        }
+                        background-image: none;
+                        /* background-repeat: repeat-x; */
+                        background-color: #f7f9fc;
+                        border: none;
+                        display: unset;
+                    }
+                    &:after {
+                        content: '';
+                        clear: both;
+                        float: none;
+                        display: none;
+                      }
+                    .panel-collapse {
+                        .panel-body {
+                            background-color: #f7f9fc;
+                            border: none;
+                            .card-body {
+                                .card-block {
+                                    background-color: #f7f9fc;
+                                    border: none;
+                                    display: none;
+                                }
+                                background-color: #f7f9fc;
+                                border: none;
+                            }
+                        }
+                    }
+                    
+                }
+            }
             .app-head {
                 margin-right: 10px;
                 margin-left: 2px;
@@ -142,6 +195,7 @@
                     background-color: #4291de;
                     color: white;
                     border: none;
+                    float: right;
                 }
             }
             .metadata {
