@@ -23,10 +23,10 @@ export class ApplicationComponent implements OnInit, OnChanges {
   public symbol: string = 'fa fa-sort-desc';
   // public trial: any;
   public showOnScreen: boolean = true;
-  // public c1: any;
-  // public d1: any;
-  // public o1: any;
-
+   public l1: string;
+   public l2: string;
+   public l3: string;
+   public r_l: number;   
   public charts: any = {};
 
 
@@ -107,12 +107,16 @@ export class ApplicationComponent implements OnInit, OnChanges {
   //     },
 
   // }
+  this.l1="lgplv2";
+  this.l2="EPL1.0";
+  this.l3="MIT Liscense";
+  this.r_l=1;
 
   this.charts['data'] = {
     columns: [
-        ['Apache 2.0', 40],
-        ['EPL1.0', 40],
-        ['MIT Liscense', 20]
+        [this.l1, 40],
+        [this.l2, 40],
+        [this.l3, 20]
     ],
     type : 'donut'
   };
@@ -120,12 +124,12 @@ export class ApplicationComponent implements OnInit, OnChanges {
   this.charts['options'] = {
     donut: {
         title: "3 Licences",
-        width: 15        
+        width: 13        
     },
     size: {
       height:300,
       width :270
-    },
+    }
 
   };
     this.charts['configs'] = {

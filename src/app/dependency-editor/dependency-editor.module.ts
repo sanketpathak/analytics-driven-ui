@@ -6,12 +6,14 @@ import {ApplicationModule} from '../application/application.module';
 
 import { DependencyComponent } from './dependency-editor.component';
 import { PackagesComponent } from 'app/packages/packages.component';
+import {ChartModule} from '../utils/chart/chart.module' ;
 
 @NgModule ({
     imports: [
         CommonModule,
         PackagesModule,
-        ApplicationModule
+        ApplicationModule,
+        ChartModule
     ],
     declarations: [
         DependencyComponent

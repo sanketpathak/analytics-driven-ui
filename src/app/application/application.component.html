@@ -58,7 +58,6 @@
                               </div>
                               </div> -->
   
-                              <!-- test -->
                               <div class="card-pf card-pf-view card-pf-view-xs">
                                   <div class="card-pf-body">
                                     <div class="row">
@@ -128,10 +127,10 @@
             </accordion-group>
           </accordion>
             </div>
-            <div class="app-head">
+            <!-- <div class="app-head"> -->
               <!-- <h2><span id="i3" [class]="symbol" (click)="toggle(i3)"></span>Licenses</h2> -->
-              <accordion>
-                  <accordion-group #grouped2 [isOpen]="true" [panelClass]="customClass"> <!--[isOpen]="status.isFirstOpen" [isDisabled]="status.isFirstDisabled"> heading="Recommendations" -->
+              <!-- <accordion>
+                  <accordion-group #grouped2 [isOpen]="true" [panelClass]="customClass"> 
                      <div accordion-heading>
                          <div class="accordion-heading" accordion-heading>
                              <h2><i class="pull-left accordion-indicator float-xs-left"
@@ -141,17 +140,17 @@
                          
                      </div>
               <div class="liscence">
-                  <div id="donut-chart-7" class="donut-chart-pf example-donut-chart-mini"></div>
+                  <div id="donut-chart-7" class="donut-chart-pf example-donut-chart-mini"></div>-->
                   <!-- <f8-chart [data]="charts['data']" [chartOptions]="charts['options']"></f8-chart> -->
-                  <div style="text-align: center; width: 95px;"></div>
+                  <!--<div style="text-align: center; width: 95px;"></div>
               </div>
             </accordion-group>
           </accordion>
-            </div>
-            <div class="app-head">
+            </div> -->
+            <!--<div class="app-head">-->
               <!-- <h2><span id="i4" [class]="symbol" (click)="toggle(i4)"></span>Metadatas</h2> -->
-              <accordion>
-                  <accordion-group #grouped3 [isOpen]="true" [panelClass]="customClass"> <!--[isOpen]="status.isFirstOpen" [isDisabled]="status.isFirstDisabled"> heading="Recommendations" -->
+              <!-- <accordion>
+                  <accordion-group #grouped3 [isOpen]="true" [panelClass]="customClass">
                      <div accordion-heading>
                          <div class="accordion-heading" accordion-heading>
                              <h2><i class="pull-left accordion-indicator float-xs-left"
@@ -185,7 +184,7 @@
             </div>
           </accordion-group>
         </accordion>
-          </div>
+          </div> -->
           <div class="app-head">
             <!-- <h2><span id="i3" [class]="symbol" (click)="toggle(i3)"></span>Licenses</h2> -->
             <accordion>
@@ -200,16 +199,30 @@
                    </div>
             <div class="liscence">
                 <!-- <div id="donut-chart-7" class="donut-chart-pf example-donut-chart-mini"></div> -->
-                <f8-chart id="chart" [data]="charts['data']" [chartOptions]="charts['options']" bind-configs="charts['configs']" ></f8-chart>
+                <!-- <f8-chart id="chart" [data]="charts['data']" [chartOptions]="charts['options']" bind-configs="charts['configs']" ></f8-chart>
+                <span> Licence(s):{{r_l}}</span> -->
                 <!-- <div style="text-align: center; width: 95px;"></div> -->
+
+                <!-- <div class="col-xs-12"> -->
+                    <!-- <div class="card-pf card-pf-view card-pf-view-xs"> -->
+                      <!-- <div class="card-pf-body"> -->
+                          <span style="margin-left:2px"> Restrictive Licence(s):{{r_l}}</span>                          
+                        <div class="row">
+                            <!-- <div class="col-sm-12"> -->
+                                <f8-chart id="chart" [data]="charts['data']" [chartOptions]="charts['options']" bind-configs="charts['configs']"></f8-chart>
+                              <!-- </div> -->
+                          </div>
+                      <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
             </div>
           </accordion-group>
         </accordion>
           </div>
-          <div class="app-head">
+          <!-- <div class="app-head"> -->
             <!-- <h2><span id="i4" [class]="symbol" (click)="toggle(i4)"></span>Metadatas</h2> -->
-            <accordion>
-                <accordion-group #grouped3 [isOpen]="true" [panelClass]="customClass"> <!--[isOpen]="status.isFirstOpen" [isDisabled]="status.isFirstDisabled"> heading="Recommendations" -->
+            <!--<accordion>
+                <accordion-group #grouped3 [isOpen]="true" [panelClass]="customClass">
                    <div accordion-heading>
                        <div class="accordion-heading" accordion-heading>
                            <h2><i class="pull-left accordion-indicator float-xs-left"
@@ -239,12 +252,12 @@
                             </div>
                         </div>
                       </div>
-                      </div>
+                  </div>
                 </div>
           </div>
         </accordion-group>
       </accordion>
-      </div>
+      </div>-->
   </div>
   </div>
     </div>
