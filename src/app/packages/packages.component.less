@@ -1,26 +1,26 @@
 /* @import (reference) '../../assets/stylesheets/shared/main.less'; */
+.app-joint
+{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: strech;    
+}
 .application {
     background-color: #F7F9FC;
-    // border:thin solid black;
     position: relative;
-    width: 30%;
-    // height: 705px;
+    border:thin solid black;
     margin-bottom: 40px;
     margin-right: 5px;
     margin-left: 5px;
-    float: left;
     display:flex;
-    vertical-align:middle;
+    flex: 1;
 }
 .packages {
     background-color: #F7F9FC;
     border:thin solid black;
-    position: static;
-    display:inline-block;
-    vertical-align:middle;
-    width: 68%;
-    // height: 151.7%;
     height: 1202px;
+    flex: 3;
 
     .header {
         position: relative;
