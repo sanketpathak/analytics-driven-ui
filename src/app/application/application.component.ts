@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { AccordionModule } from 'ngx-bootstrap';
 import { HttpModule } from '@angular/http';
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 import * as c3 from 'c3';
 
 
@@ -118,33 +118,33 @@ export class ApplicationComponent implements OnInit {
     }
   };
 
-  var chart = c3.generate(
-    { 
-    bindto: '#donut-chart-7',
-    legend : {
-        show: true,
-        position: 'right'
-      },
-      size : {
-        height:300,
-        width :250
-      },
-      data: { 
-        columns: [ 
-          ['Apache 2.0', 40],
-          ['EPL1.0', 40],
-          ['MIT Liscense', 20]
-         ],
-         type : 'donut',
-         onclick: function (d, i) { console.log("onclick", d, i); },
-         onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-         onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-         }, 
-         donut: { title: "3 Licences",
-         width: 15
-         },
-        });
-  
+  // var chart = c3.generate(
+  //   {
+  //   bindto: '#donut-chart-7',
+  //   legend : {
+  //       show: true,
+  //       position: 'right'
+  //     },
+  //     size : {
+  //       height:300,
+  //       width :250
+  //     },
+  //     data: {
+  //       columns: [
+  //         ['Apache 2.0', 40],
+  //         ['EPL1.0', 40],
+  //         ['MIT Liscense', 20]
+  //        ],
+  //        type : 'donut',
+  //        onclick: function (d, i) { console.log("onclick", d, i); },
+  //        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+  //        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+  //        },
+  //        donut: { title: "3 Licences",
+  //        width: 15
+  //        },
+  //       });
+  //
 
 
   //   var c3ChartDefaults = c3.generate({

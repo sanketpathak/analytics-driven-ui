@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
+import { MachinePage } from './app.po';
 
-describe('analytics-driven-ui App', () => {
-  let page: AppPage;
+describe('machine App', function() {
+  let page: MachinePage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new MachinePage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

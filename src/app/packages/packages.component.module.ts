@@ -14,7 +14,6 @@ import { ApplicationModule } from '../application/application.module';
     imports: [
         CommonModule,
         FormsModule,
-        ApplicationModule,
         TypeaheadModule.forRoot(),
         BsDropdownModule.forRoot(),
         AccordionModule

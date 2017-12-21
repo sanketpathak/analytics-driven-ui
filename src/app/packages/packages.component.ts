@@ -4,9 +4,9 @@ import { PackagesServices } from './packages.component.service'
 
 @Component({
     selector: 'app-packages',
-    templateUrl: './packages.component.html',
+    styleUrls: ['./packages.component.less'],
     providers: [PackagesServices],
-    styleUrls: ['./packages.component.less']
+    templateUrl: './packages.component.html'
 })
 export class PackagesComponent implements OnInit {
 

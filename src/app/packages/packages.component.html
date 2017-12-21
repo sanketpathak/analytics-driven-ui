@@ -1,7 +1,4 @@
 <div class="app-joint">
-  <div class="application">
-  <app-application></app-application>
-</div>
   <div class="packages">
     <div class="header"><h2>Choose Packages </h2></div>
     <div class="content"  >
@@ -11,7 +8,7 @@
             <div class="card-pf-items">
               <table class="tag-table"  *ngFor="let key of objectKeys(categories)">
                 <tr>
-                  <td class="tag-table-td-left"(click)="tagClick(key)" [class.tag-color]="selectedTags.has(key)">{{key}}</td>
+                  <td class="tag-table-td-left" (click)="tagClick(key)" [class.tag-color]="selectedTags.has(key)" > {{key}}</td>
                   <td class="tag-table-td-left">
                     <label class="tag-table-td-label">{{categories[key]}}</label>
                   </td>
