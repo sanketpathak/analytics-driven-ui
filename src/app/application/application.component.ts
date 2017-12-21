@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { AccordionModule } from 'ngx-bootstrap';
 import { HttpModule } from '@angular/http';
 // import { BrowserModule } from '@angular/platform-browser';
@@ -11,9 +11,13 @@ import * as c3 from 'c3';
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./application.component.less']
 })
-export class ApplicationComponent implements OnInit {
+export class ApplicationComponent implements OnInit, OnChanges {
   @Input('component') component;
   @Output() onCloseEmitter = new EventEmitter();
+
+  @Input('dependencies') dependencies;
+
+
   public donutData: any;
   public showtd: boolean = false;
   public symbol: string = 'fa fa-sort-desc';
@@ -200,6 +204,13 @@ export class ApplicationComponent implements OnInit {
     }
     else {
         this.symbol = 'fa fa-sort-desc nom';
+    }
+  }
+
+
+  ngOnChanges(): void {
+    if (this.dependencies) {
+      console.log(this.dependencies);
     }
   }
 }

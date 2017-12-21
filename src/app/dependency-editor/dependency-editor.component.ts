@@ -8,4 +8,13 @@ import { Observable } from 'rxjs/Observable';
 })
 export class DependencyComponent {
 
+    public selectedDependencies: any;
+
+    public handlePackageSelection(event: any): void {
+        if (!event.preventDefault) {
+            this.selectedDependencies = event;
+            console.log(this.selectedDependencies);
+        }
+    }
+
 }

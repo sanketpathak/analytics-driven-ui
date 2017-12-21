@@ -10,6 +10,8 @@ import { PackagesServices } from './packages.component.service'
 })
 export class PackagesComponent implements OnInit {
 
+    @Output('onPackageSelect') onPackageSelect = new EventEmitter();
+
     public dependencies: Array<any> = [];
     public dependenciesData: Array<any> = [];
     public masterTags: Array<any> = ['web', 'spring', 'database', 'starter', 'aws', 'maven'];
@@ -53,6 +55,9 @@ export class PackagesComponent implements OnInit {
             })
         }
         console.log(this.selectedPackages);
+
+        this.onPackageSelect.emit({ packages: this.selectedPackages });
+
     }
 
     processPackages(): void {
