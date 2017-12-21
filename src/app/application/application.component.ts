@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { AccordionModule } from 'ngx-bootstrap';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +8,7 @@ import * as c3 from 'c3';
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./application.component.less']
 })
 export class ApplicationComponent implements OnInit {
