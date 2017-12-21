@@ -135,14 +135,9 @@ export class ApplicationComponent implements OnInit, OnChanges {
     },
   };
 
-<<<<<<< 6b36fb6166fe7e9b06cb4855e154e0d1b57b6802
-  // var chart = c3.generate(
-  //   {
-=======
   // c3-charts
   // var chart = c3.generate(
   //   { 
->>>>>>> Some graph change
   //   bindto: '#donut-chart-7',
   //   legend : {
   //       show: true,
@@ -152,13 +147,8 @@ export class ApplicationComponent implements OnInit, OnChanges {
   //       height:300,
   //       width :250
   //     },
-<<<<<<< 6b36fb6166fe7e9b06cb4855e154e0d1b57b6802
-  //     data: {
-  //       columns: [
-=======
   //     data: { 
   //       columns: [ 
->>>>>>> Some graph change
   //         ['Apache 2.0', 40],
   //         ['EPL1.0', 40],
   //         ['MIT Liscense', 20]
@@ -167,20 +157,12 @@ export class ApplicationComponent implements OnInit, OnChanges {
   //        onclick: function (d, i) { console.log("onclick", d, i); },
   //        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
   //        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-<<<<<<< 6b36fb6166fe7e9b06cb4855e154e0d1b57b6802
-  //        },
-=======
   //        }, 
->>>>>>> Some graph change
   //        donut: { title: "3 Licences",
   //        width: 15
   //        },
   //       });
-<<<<<<< 6b36fb6166fe7e9b06cb4855e154e0d1b57b6802
-  //
-=======
   
->>>>>>> Some graph change
 
 
   //   var c3ChartDefaults = c3.generate({
