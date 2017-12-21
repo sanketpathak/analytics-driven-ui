@@ -182,6 +182,56 @@
                         </div>
                       </div>
                       </div>
+<<<<<<< 6b36fb6166fe7e9b06cb4855e154e0d1b57b6802
+=======
+            </div>
+          </accordion-group>
+        </accordion>
+          </div>
+          <div class="app-head">
+            <!-- <h2><span id="i3" [class]="symbol" (click)="toggle(i3)"></span>Licenses</h2> -->
+            <accordion>
+                <accordion-group #grouped2 [isOpen]="true" [panelClass]="customClass"> <!--[isOpen]="status.isFirstOpen" [isDisabled]="status.isFirstDisabled"> heading="Recommendations" -->
+                   <div accordion-heading>
+                       <div class="accordion-heading" accordion-heading>
+                           <h2><i class="pull-left accordion-indicator float-xs-left"
+                           [ngClass]="{'fa': true,'fa-sort-desc': grouped2?.isOpen, 'fa-sort-asc': !grouped2?.isOpen}"></i>
+                           Licenses</h2>
+                       </div>
+                       
+                   </div>
+            <div class="liscence">
+                <!-- <div id="donut-chart-7" class="donut-chart-pf example-donut-chart-mini"></div> -->
+                <f8-chart id="chart" [data]="charts['data']" [chartOptions]="charts['options']" bind-configs="charts['configs']" ></f8-chart>
+                <!-- <div style="text-align: center; width: 95px;"></div> -->
+            </div>
+          </accordion-group>
+        </accordion>
+          </div>
+          <div class="app-head">
+            <!-- <h2><span id="i4" [class]="symbol" (click)="toggle(i4)"></span>Metadatas</h2> -->
+            <accordion>
+                <accordion-group #grouped3 [isOpen]="true" [panelClass]="customClass"> <!--[isOpen]="status.isFirstOpen" [isDisabled]="status.isFirstDisabled"> heading="Recommendations" -->
+                   <div accordion-heading>
+                       <div class="accordion-heading" accordion-heading>
+                           <h2><i class="pull-left accordion-indicator float-xs-left"
+                           [ngClass]="{'fa': true,'fa-sort-desc': grouped3?.isOpen, 'fa-sort-asc': !grouped3?.isOpen}"></i>
+                           Metadatas</h2>
+                       </div>
+                       
+                   </div>
+            <div class="metadata">
+              <div class="met"><span >Group Id</span>
+                <div class="col-xs-12">
+                    <div class="card-pf card-pf-view card-pf-view-xs">
+                      <div class="card-pf-body">
+                        <div class="row">
+                            <p>g-id</p>
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+>>>>>>> Some graph change
                 </div>
                 <div class="met"><span >Version</span>
                   <div class="col-xs-12">
